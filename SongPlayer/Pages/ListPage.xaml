@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SongPlayer.Pages.ListPage"
+             xmlns:vm="clr-namespace:SongPlayer.Dal"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:DataType="vm:MusicViewModel"
+             xmlns:models ="clr-namespace:SongPlayer.Models"
+             Title="Müzik Listesi">
+    <ContentPage.Behaviors>
+        <toolkit:StatusBarBehavior StatusBarColor="{AppThemeBinding Dark={StaticResource DarkBackground},Light={StaticResource LightBackground}}" />
+    </ContentPage.Behaviors>
+
+
+    <ScrollView Background="{AppThemeBinding Dark={StaticResource DarkBackground},Light={StaticResource LightBackground}}">
+        <StackLayout>
+
+         
+
+            <ListView x:Name="listView" ItemsSource="{Binding MusicList}" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="models:MusicClass">
+                        <ViewCell>
+                            <Grid>
+                                <Frame Style="{StaticResource CardView}" Grid.RowSpan="5" BorderColor="Blue"  Margin="5,10,15,10" Padding="10">
+                                    <Grid ColumnSpacing="0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="50"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Image Grid.Column="0" Source="music.png" WidthRequest="50" HeightRequest="50"/>
+                                        <Label Style="{StaticResource MediumLabel}" Grid.Column="1" Text="{Binding FileName}" VerticalOptions="CenterAndExpand"  FontAttributes="Bold">
+                                            <Label.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="OnSelectedMusic"/>
+                                            </Label.GestureRecognizers>
+                                        </Label>
+                                        <ImageButton Grid.Column="3"  Source="options.png" HeightRequest="50" Margin="20,0,20,0" Clicked="OptionsButton_Clicked" />
+                                    </Grid>
+                                </Frame>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+    </ScrollView>
+
+
+
+</ContentPage>
+  

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SongPlayer.Pages.FavoriPage"
+             xmlns:vm="clr-namespace:SongPlayer.Dal"
+             x:DataType="vm:FavoriViewModel"
+             xmlns:models="clr-namespace:SongPlayer.Models"
+             Title="Favori Listesi">
+    
+        <StackLayout Background="{AppThemeBinding Dark={StaticResource DarkBackground},Light={StaticResource LightBackground}}">
+
+            <ListView x:Name="listView" ItemsSource="{Binding MusicList}" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="models:MusicClass">
+                        <ViewCell>
+                            <Grid>
+                                <Frame Style="{StaticResource CardView}" Grid.RowSpan="5" BorderColor="Blue" CornerRadius="10" Margin="10,0,10,10" Padding="10">
+                                    <Grid ColumnSpacing="0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="50"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Image Grid.Column="0" Source="music.png" WidthRequest="50" HeightRequest="50"/>
+                                        <Label Style="{StaticResource MediumLabel}" Grid.Column="1" Text="{Binding FileName}" VerticalOptions="CenterAndExpand">
+                                            <Label.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="OnSelectedMusic"/>
+                                            </Label.GestureRecognizers>
+                                        </Label>
+                                        <ImageButton x:Name="deleteBtn" Grid.Column="3"  Source="delete.png" HeightRequest="50" WidthRequest="30" Clicked="deleteBtn_Clicked" Margin="5,5,20,5" />
+                                    </Grid>
+                                </Frame>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+  
+
+</ContentPage>

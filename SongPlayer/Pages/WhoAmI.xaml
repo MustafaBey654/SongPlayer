@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Name="whoami"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SongPlayer.Pages.WhoAmI"
+             Title="Ben Kimim" 
+             Background="{AppThemeBinding Dark={DynamicResource DarkBackground},Light={DynamicResource LightBackground}}">
+ 
+        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Padding="10">
+
+            <Frame Style="{DynamicResource CardView}" CornerRadius="20" >
+                <Image x:Name="imageShow" 
+                       HeightRequest="350"      
+                       Aspect="AspectFill" />
+            </Frame>
+
+            <Label Text="Mustafa Yılmaz" 
+                   FontSize="Large" 
+                   FontAttributes="Bold" 
+                   Style="{DynamicResource LargeLabel}"
+                   HorizontalOptions="CenterAndExpand"/>
+
+            <Label Text="Erdağlı" 
+                   FontSize="Large" 
+                   Style="{DynamicResource LargeLabel}"
+                   FontAttributes="Bold" 
+                   HorizontalOptions="CenterAndExpand"/>
+
+            <Label Text="mustafa.er2375@gmail.com" 
+                   FontSize="Medium" 
+                   Style="{DynamicResource LargeLabel}"
+                   HorizontalOptions="CenterAndExpand"/>
+
+            <Label Text="Bu uygulama, müzik severler için tasarlanmıştır. Kullanıcı dostu arayüzü ve geniş özellikleri ile en sevdiğiniz şarkıları dinlemenizi sağlar. Bu müzik çaların tasarımı ve kod yapısı, kullanıcı deneyimini optimize etmek için en iyi uygulama geliştirme uygulamalarını kullanır." 
+                   FontSize="Small" 
+                   Style="{DynamicResource MediumLabel}"
+                   HorizontalOptions="CenterAndExpand"/>
+        </StackLayout>
+  
+</ContentPage>

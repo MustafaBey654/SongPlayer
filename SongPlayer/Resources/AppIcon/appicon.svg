@@ -1,0 +1,9 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+	<title>musical</title>
+	<defs>
+		<image  width="211" height="226" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANMAAADiAQMAAADu72CSAAAAAXNSR0IB2cksfwAAAAZQTFRFAAAA////pdmf3QAAAAJ0Uk5TAP9bkSK1AAADMUlEQVR4nO3YO5LjIBAGYKkUEOoIOgpHw9kea5XtNZRtqtCBSqyhocXj/6mZcKtGiaf8DW5e3WBPE3vMQWly3IznZrkZz81yWzy3jdsnGjXLLURjtnGTZtgst9lzc9xSNGiWW472C1hqdoG1zc12YDIl/gZ7QpsBy9HAXiqmpDON1tui0XormrVWLUBjq3ayszJaa2W0xprlrqyKVlu7S0qro9WWZvnkps2AHdyeZr2d3IpmnZ0Dm7gd3MpoYXpLOytzlVVU1azGLDfjuTlui+fmuZmBOW5dzSrMcTOem+UGapaa45ab/QGWol2mt5wyL2C52dTbk9e9bZqgneUpeQHTaL2xmhUsRXtPvVXFp7EiWmt1FamtjAZrSC510FDNancCsNwM2c5tVLN2bhoN2MFtVLN2blXx+XrNaotPafvAph/7sf/CFs/NfQoQMUNqufz5ySliLlQ1bLGM3tikoP+CJrUSnUe5Cv2F5pqKWJrnNjo3R2YGtg5sC8cAMRuOuJXZ3X5XK873SwYJTK5+Dtksb27EdhlJb4vUUXh3S7Zgu4uwtRk5QIi901CQyV0T3THXZPbbdlDb0nv51d2l7aXF+SFmw4HZmsSN94jXY6/C5Es3tpg3JzY5obHJToWWrjS/kWluADMDWwe2Dcy2VsyZi4PrLL6GyZyp3VI3sh1qc8ybVe3ZE3sY+i6DzHaqmXhLnYG9gk0y4bW5mPWX/Nns+cKsr3Nl8vEe+5Yua47lPApvnhKmzr+Yolb3aLaU07fehdTmOKbP5zy2FLbH+Jf0NcdOHTxiv9/AXOy4E8v/rnZNaQV8a3EWjNjd2BY6I+UsmyvsDnt2B5b35AuYebZdZykHbmQpdy5kKefehbXnGLZNT5Xe1jwEEM9o5vQ25W4iC505ia0+XdGBLXmT6xoVN/acg7q29U8J1WdhC6P8zPDIrt50737bjvBikGmOvb9na87bE1nKd2iphhy9ae0BJjVr8c3XnPhIi5XZlS4m/RMXWctZZ+fq0RL1X1C/atuTN92TcvhAlvJ0RzZr6oOnPHFgR2E3U0dhN8c/nC+0m1PMRTib4Vk92izyzGQE/wA7+04nwC+/hgAAAABJRU5ErkJggg=="/>
+	</defs>
+	<style>
+	</style>
+	<use id="Background" href="#img1" x="132" y="143"/>
+</svg>

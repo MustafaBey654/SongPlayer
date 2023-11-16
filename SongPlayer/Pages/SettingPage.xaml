@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SongPlayer.Pages.SettingPage"
+             Title="Ayarlar"
+             xmlns:vm="clr-namespace:SongPlayer.Dal"
+             x:DataType="vm:TimeViewModel"
+             Background="{AppThemeBinding Dark={StaticResource DarkBackground},Light={StaticResource LightBackground}}">
+    
+    <StackLayout Padding="20">
+        <Label Style="{StaticResource LargeLabel}" Text="Müzik çalar için zaman ayarı:" 
+               FontSize="Medium" 
+               VerticalOptions="CenterAndExpand" />
+
+        <TimePicker x:Name="MusicPlayerTimer" 
+                    Format="t" 
+                    Time="{Binding MusicPlayerTime}" 
+                    VerticalOptions="CenterAndExpand"/>
+
+        <Label x:Name="CountdownLabel"
+               Text="{Binding CountdownText}"
+               FontSize="Large"
+               VerticalOptions="CenterAndExpand" 
+               Style="{StaticResource LargeLabel}" />
+
+        <Button Text="Zamanı Ayarla" 
+                Clicked="OnSetTimerButtonClicked" 
+                VerticalOptions="CenterAndExpand" 
+                Style="{StaticResource ButtonOutLine}"/>
+
+        <Button Text="Geri Sayımı Sıfırla"
+                Clicked="OnResetCountdownButtonClicked"
+                VerticalOptions="CenterAndExpand"
+                Style="{StaticResource ButtonOutLine}"/>
+
+        <Button Style="{StaticResource ButtonOutLine}" Text="Resimleri Düzenleyin" VerticalOptions="CenterAndExpand" Clicked="OnEditPagePicture" />
+      
+    </StackLayout>
+
+
+</ContentPage>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell x:Name="shell"
+    x:Class="SongPlayer.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:SongPlayer.Pages"
+    FlyoutIcon="lists.png"
+    Shell.FlyoutBehavior="Flyout"
+    FlyoutBackgroundColor="{AppThemeBinding Dark={StaticResource DarkBackground},Light={StaticResource CardBackgroundDark}}"
+    BackgroundColor="{AppThemeBinding Dark={StaticResource DarkBackground},Light= {StaticResource CardBackgroundDark}}">
+
+    <!-- Flyout Header -->
+    <Shell.FlyoutHeaderTemplate>
+        <DataTemplate>
+            <Frame Style="{StaticResource CardView}" CornerRadius="20">
+                <Image Source="{Binding HeaderImage, Source={x:Reference shell}}" HeightRequest="350" Aspect="AspectFill" />
+            </Frame>
+        </DataTemplate>
+    </Shell.FlyoutHeaderTemplate>
+
+    <!-- Flyout Footer -->
+    <Shell.FlyoutFooterTemplate>
+        <DataTemplate>
+            <Frame Style="{StaticResource CardView}" CornerRadius="20" >
+                <Image Source="{Binding FooterImage, Source={x:Reference shell}}" HeightRequest="250" Aspect="AspectFill"  />
+            </Frame>
+        </DataTemplate>
+    </Shell.FlyoutFooterTemplate>
+
+
+    <TabBar FlyoutDisplayOptions="AsSingleItem">
+
+        <Tab Title="Müzikler"  Icon="music.png" >
+            <ShellContent
+                          Title="Şarkılar"
+                          ContentTemplate="{DataTemplate local:ListPage}"
+                          Route="ListPage"/>
+
+            <ShellContent
+               Title="Favoriler"
+               ContentTemplate="{DataTemplate local:FavoriPage}"
+               Route="FavoriPage"/>
+
+            <ShellContent
+                Title="Şarkı Ekle"
+                ContentTemplate="{DataTemplate local:AddSongPages}"
+                Route="AddSongPage"/>
+
+
+        </Tab>
+
+
+        <ShellContent Icon="settings.png"
+           Title="Ayarlar"
+           ContentTemplate="{DataTemplate local:SettingPage}"
+           Route="Settings"/>
+
+
+    </TabBar>
+
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+
+        <ShellContent Icon="settings.png"
+                   Title="Ayarlar"
+                    ContentTemplate="{DataTemplate local:SettingPage}"
+                    Route="Setting"/>
+    </FlyoutItem>
+
+
+    <FlyoutItem Title="Geri Bildirim" FlyoutDisplayOptions="AsMultipleItems" >
+
+        <ShellContent Icon="feedback.png"
+                  Title="Geri Bildirim"
+                  ContentTemplate="{DataTemplate local:FeedBackPage}"
+                  Route="Geri Bildirim"/>
+
+
+    </FlyoutItem>
+    <FlyoutItem Title="Kimim Ben" FlyoutDisplayOptions="AsMultipleItems">
+
+        <ShellContent Icon="person.png"
+               Title="Kimim Ben"
+               ContentTemplate="{DataTemplate local:WhoAmI}"
+               Route="WhoAmI"/>
+
+
+    </FlyoutItem>
+
+
+
+</Shell>
+    

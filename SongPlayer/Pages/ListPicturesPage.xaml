@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="SongPlayer.Pages.ListPicturesPage"
+             xmlns:vm="clr-namespace:SongPlayer.Dal"
+             xmlns:models="clr-namespace:SongPlayer.Models"
+             xmlns:converters="clr-namespace:SongPlayer.ImageConverters"
+             Title="Resim Listesi"
+             x:DataType="vm:ImageViewModel"
+             Background="{AppThemeBinding Dark={StaticResource DarkBackground},Light={StaticResource LightBackground}}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:ByteArrayToImageSourceConverter
+                x:Key="ByteArrayToImageSource"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout>
+        <Button x:Name="addImageButton" Text="Resim Ekle" Clicked="OnAddImageButtonClicked"  Style="{StaticResource ButtonOutLine}"/>
+
+        <ListView x:Name="imagesListView" ItemsSource="{Binding ImageList}" HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="models:ImageClass">
+                    <ViewCell>
+                        <Grid>
+                            <Frame Style="{StaticResource CardView}" Grid.RowSpan="5"  Margin="10,10,5,10" >
+                                <Grid ColumnSpacing="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    
+
+                                    <Image Grid.Column="0" Source="{Binding Image, Converter={StaticResource ByteArrayToImageSource}}" WidthRequest="300" HeightRequest="300" Aspect="AspectFill"/>
+                                    <Label Style="{StaticResource MediumLabel}" Grid.Column="1" Text="">
+                                      
+                                    </Label>
+
+                                    <ImageButton Style="{StaticResource ImageOutLine}" Grid.Column="3"  Source="options.png" HeightRequest="60" WidthRequest="60" Margin="10,0,40,0" Clicked="OptionsButton_Clicked" />
+                                </Grid>
+                            </Frame>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>

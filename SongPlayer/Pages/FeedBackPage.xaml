@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SongPlayer.Pages.FeedBackPage"
+             Title="Geri Bildirim"
+             Background="{AppThemeBinding Dark={StaticResource DarkBackground},Light={StaticResource LightBackground}}">
+    <StackLayout VerticalOptions="Start"  Spacing="20"
+                 Padding="10" Margin="10">
+        <Label Style="{StaticResource SmallLabel}" Text="Geri Bildirim Veya İsteklerinizi Bize Bildirin" 
+               FontSize="24"
+               VerticalOptions="CenterAndExpand" HorizontalOptions="Center"/>
+        <Editor x:Name="FeedbackEditor" 
+                Placeholder="Lütfen sorununuzu veya görüşünüzü bize bildirin."
+                AutoSize="TextChanges"
+                HeightRequest="250"
+                BackgroundColor="White"
+                TextColor="Black"
+                PlaceholderColor="Blue"
+                FontSize="18"
+                VerticalOptions="CenterAndExpand"/>
+        <Button  x:Name="SendButton" 
+                Text="Gönder" 
+                 Style="{StaticResource ButtonOutLine}"
+                Clicked="OnSendClicked"
+                 Margin="20"/>
+    </StackLayout>
+</ContentPage>

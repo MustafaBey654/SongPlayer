@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SongPlayer.Pages.MusicViewPage"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             Unloaded="ContentPage_Unloaded"
+             Background="{AppThemeBinding Dark={StaticResource DarkBackground},Light={StaticResource LightBackground}}">
+
+
+    <VerticalStackLayout  Spacing="10" HorizontalOptions="CenterAndExpand" Margin="0,10,50,0">
+
+        <StackLayout Orientation="Horizontal">
+            <toolkit:MediaElement x:Name="mediaElementLbl"
+                                  ShouldAutoPlay="False" ShouldShowPlaybackControls="False" VerticalOptions="Start"/>
+        </StackLayout>
+
+        <Image x:Name="albumArtImage" Source="music_icon.png" HorizontalOptions="Fill" VerticalOptions="Fill" HeightRequest="350" Margin="10,0,0,10"/>
+
+        <StackLayout Orientation="Horizontal" Spacing="5" Margin="10">
+            <Label Style="{StaticResource MediumLabel}" x:Name="lblMusicTime" Text="0:00"/>
+            <Slider x:Name="progressSlider" Maximum="100" Value="0"  WidthRequest="250" ValueChanged="Slider_ValueChanged" BackgroundColor="AliceBlue"/>
+            <!-- Seek to slider. Ths slider allows you to jump to different parts of the media playback. -->
+        </StackLayout>
+      
+       
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Start" Spacing="5" Margin="10">
+            <ImageButton Style="{StaticResource ImageOutLine}" Source="play_pause.png"   Clicked="PlayPauseButton_Clicked"  HeightRequest="55" WidthRequest="45"/>
+            <ImageButton Style="{StaticResource ImageOutLine}" Source="next_second.png" Clicked="SkipForwardButton_Clicked" HeightRequest="55" WidthRequest="45"/>
+            <ImageButton Style="{StaticResource ImageOutLine}" Source="back_second.png" Clicked="SkipBackwardButton_Clicked" HeightRequest="55" WidthRequest="45"/>
+            <ImageButton Style="{StaticResource ImageOutLine}" Source="stop.png" Clicked="StopButton_Clicked"   HeightRequest="55" WidthRequest="45"/>
+            <ImageButton Style="{StaticResource ImageOutLine}"  Source="next.png" Clicked="Next_Clicked"  HeightRequest="55" WidthRequest="45"  />
+            <ImageButton Style="{StaticResource ImageOutLine}"  Source="previous.png" Clicked="Previous_Clicked" HeightRequest="55" WidthRequest="45"/>
+            <Button  Style="{StaticResource ImageOutLine}"  x:Name="shuffleButton" HeightRequest="53" WidthRequest="45" Clicked="ShuffleButton_Clicked">
+                <Button.ImageSource>
+                    <FileImageSource File="{Binding ShuffleIcon}" />
+                </Button.ImageSource>
+            </Button>
+        </StackLayout>
+    </VerticalStackLayout>
+
+
+</ContentPage>
